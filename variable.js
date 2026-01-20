@@ -72,7 +72,7 @@ console.log(h);
 var h=24;
 //console.log(g);
 console.log(j);
-let j=12;
+var j=12;
 
 //hoisting impact
 //hoisting --> when your create a variable into 
@@ -94,3 +94,37 @@ var --> hoist --> undefined
 let --> hoist --> error
 const -->hoist -->error
 */
+// ===========================================================================
+ // Example 1: let hoisting (Error case)
+// console.log(nm);   // ReferenceError
+let nm = "name";
+console.log(nm);
+
+//2
+console.log(b);
+var b = "username";
+
+//3
+var x = 1;
+{
+   var x = 2;
+}
+console.log(x);
+
+//4
+
+let r = 10;
+{
+   let r = 20;
+   console.log("Inside:", r);
+}
+console.log("Outside:", r);
+
+
+//5
+
+const person = { name: "demo" };
+
+person.name = "user";   
+// person = {}; 
+console.log(person.name)           

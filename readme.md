@@ -6,6 +6,8 @@ Javascript Variable
 <p>let nm = "name";</p>
 <p>Answer or Error: </p>
 <p>Why : </p>
+<h1>let hoist hota hai lekin Temporal Dead Zone (TDZ) me hota hai
+Declare hone se pehle let variable use nahi kar sakte</h1>
 </div>
  
 <div>
@@ -14,6 +16,8 @@ Javascript Variable
 <p>var b = "username";</p>
 <p>Answer or Error: </p>
 <p>Why : </p>
+<h1>var hoist hota hai aur default value undefined hoti hai
+Isliye error nahi aata</h1>
 </div>
  
 <div>
@@ -26,6 +30,8 @@ Javascript Variable
 <p>console.log(x);</p>
 <p>Answer or Error: </p>
 <p>Why : </p>
+<h1>var block scope follow nahi karta
+Same variable overwrite ho jata hai</h1>
 </div>
  
 <div>
@@ -40,6 +46,7 @@ console.log("Outside:", a);
 </p>
 <p>Answer or Error: </p>
 <p>Why : </p>
+<h1>let block scope hota hai Block ke andar aur bahar alag variables bante hain</h1>
 </div>
  
 <div>
@@ -50,6 +57,11 @@ on console.log
 <p>person = {} ; ❌ </p>
 <p>Answer or Error: </p>
 <p>Why : </p>
+
+<h1>
+const me reference constant hota hai
+Object ke andar ki value change ho sakti hai
+Lekin poora object reassign nahi kar sakte</h1>
 </div>
  
  
