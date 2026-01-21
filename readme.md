@@ -131,5 +131,5 @@ JavaScript still treats it as a numeric type</p>
 <p>console.log(y);</p>
 <p>Answer or Error: </p>
 <p>Why :Variable is declared but not assigned
-JavaScript automatically assigns undefined </p>
+JavaScript automatically assigns undefined =====</p>
 </div>
