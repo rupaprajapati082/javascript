@@ -114,3 +114,25 @@ u_name = {};
 // why typeof NaN --> number
 // NaN is a failed number operations that why that type is number
 // ex. "hello" - 5 --> NaN
+
+// Example 1
+true + false
+
+// Example 2
+null + 1
+
+// Example 3
+"12" + 12
+
+// Example 4
+!!undefined
+
+// Example 5
+"12" - 1
+
+// Undefined vs Null
+let x;
+console.log(x);
+
+let y = null;
+console.log(y);
