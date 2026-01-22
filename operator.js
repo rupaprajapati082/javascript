@@ -100,3 +100,92 @@
 // !12 --> false --> !!12 --> true
 
 // unary
+
+// Unary operator
+//operators used : + - ! typeof ++ --
+// + (convert string to number) ex below
+// +"5" + 5 --> 10 (as it has converted +"5" to number)
+// "5" + 5 --> 55 (performed concatenation)
+// +"Name" + 5 --> NaN
+
+// -
+// ex. -5
+
+//!
+//ex. !12 --> false
+
+//typeof  used to check dataype of variable
+// typeof "Name" --> string
+
+//++
+// ex. let e = 12;
+// e++ --> 12 // postfix e++ + e --> 25
+// ++e --> 13 // postfix ++e + e --> 26
+
+//--
+// ex. let f = 12;
+// f-- --> 12 // postfix f-- + f --> 23
+// --f --> 13 // postfix --f + f --> 26
+
+//Ternary operator
+// ? :
+// condition ? if true then this : else this
+// let a = 12 > 13 ? console.log("true") : console.log("false")
+
+// typeof null --> object
+// typeof[] --> object
+// let a = [];
+// a instanceof Array --> true
+
+// instanceof --> check type of refrence data type , typeof is not used for refrence datatype
+
+// typeof NaN --> number
+// typeof --> is used for primitive data type
+// instanceof --> is used for refrence data type
+
+
+// -------------------------------------------------------------------------------------------------------------------
+// operators
+
+// Unary Oprator
+// + - ! typeof ++ --
+
+// +
+// covert string to number
+// ex. +"5" --> 5
+// +"Name" --> NaN
+// "5" + 5 --> 55
+// +"5" + 5 --> 10
+
+// -
+// ex. -5
+
+// !
+// ex. !12 --> false
+
+// typeof
+// ex. typeof "name" --> string
+
+// ++
+// ex. let a = 12
+// a++ --> 12  // post ex. a++ + a => 25
+// ++a --> 13 // pre ex. a++ + a => 26
+
+// --
+// ex. let a=3;
+// a--
+// a++
+
+// -------------------------------------------------------------------------------------------------
+// Ternary
+// ? :
+
+// condition ? true thase to print thase : false thase to print thase
+// let a = 12>13 ? console.log("true") : console.log("false");
+
+// typeof null --> object
+// typeof [] --> object, let a = []; a instanceof Array --> true
+// instanceof --> check type of reference data type // don't use typeof for reference data type
+// typeof NaN --> number
+// typeof --> primitive data type mate use karvo
+// instanceof --> reference data type mate use karvo
