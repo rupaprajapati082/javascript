@@ -189,3 +189,111 @@
 // typeof NaN --> number
 // typeof --> primitive data type mate use karvo
 // instanceof --> reference data type mate use karvo
+
+//example 1
+let x = 10;
+let y = 20;
+
+if (x > 5 && y > 5) {
+  console.log("Both are greater than 5");
+}
+
+// Example 2
+
+let isAdmin = true;
+let isLoggedIn = false;
+
+if (isAdmin || isLoggedIn) {
+  console.log("Access granted");
+}
+
+//example 3
+let temp = 35;
+
+if (!(temp > 30)) {
+  console.log("Hot day");
+} else {
+  console.log("Pleasant day");
+}
+
+// example 4
+let a = 0;
+
+if (a) {
+  console.log("Truthy value");
+} else {
+  console.log("Falsy value");
+}
+//example 5
+let score = 78;
+
+let grade =
+  score >= 90 ? "A" :
+  score >= 80 ? "B" :
+  score >= 70 ? "C" : "D";
+
+  //example 6
+
+  let points = 120;
+
+let status =
+  points >= 100 ? "Gold" :
+  points >= 50 ? "Silver" : "Bronze";
+
+  //example 7
+  let loggedIn = true;
+let hasToken = false;
+
+let access = loggedIn && hasToken ? "Allow" : "Deny";
+
+
+//example 8
+
+let o = 5;
+o++;
+console.log(o);
+
+//example 9
+
+let p = 8;
+++p;
+console.log(p);
+
+//example 10
+
+let b = 4;
+let c = b++;
+console.log(b, c);
+
+//example 11
+let l = 4;
+let m = ++b;
+console.log(l, m);
+
+//example 12
+let z = 10;
+console.log(z--);
+console.log(z);
+
+//example 13
+
+let n = 5;
+let result = n++ + ++n;
+console.log(result);
+
+//example 14
+
+let likes = 100;
+function likePost() 
+{
+//   result likes++;
+}
+
+//example 14
+
+let count = 5;
+
+if (count-- === 5) {
+  console.log("Matched");
+}
+
