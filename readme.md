@@ -377,10 +377,11 @@ a++ → value ko 1 se increase karta hai
 <p>let b = 4;</p>
 <p>let c = b++</p>
 <p>console.log(b, c);</p>
+<p>
 Why:
 b++ → pehle value assign, baad me increase
 c = 4
-b = 5
+b = 5</p>
 </div>
 
 <div>
@@ -388,11 +389,9 @@ b = 5
 <p>let b = 4;</p>
 <p>let c = ++b</p>
 <p>console.log(b, c);</p>
-Why:
-
+<p>Why:
 ++b → pehle increase
-
-b = 5, c = 5
+b = 5, c = 5</p>
 </div>
 
 <div>
@@ -400,13 +399,10 @@ b = 5, c = 5
 <p>let m = 10;</p>
 <p>console.log(m--)</p>
 <p>console.log(m);</p>
-Why:
-
+<p>Why:
 m-- → pehle print, baad me decrease
-
 First: 10
-
-Then: 9
+Then: 9</p>
 </div>
 
 <div>
@@ -414,13 +410,10 @@ Then: 9
 <p>let n = 5;</p>
 <p>let result = n++ + ++n;</p>
 <p>console.log(result);</p>
-Why (step by step):
-
+<p>Why (step by step):
 n++ → 5 (n = 6)
-
 ++n → 7
-
-5 + 7 = 12
+5 + 7 = 12</p>
 </div>
 
 <div>
@@ -431,11 +424,9 @@ result ++likes;
 }</p>
 <p>console.log(likePost());</p>
 <p>console.log(likes);</p>
-Why:
-
+<p>Why:
 result ++likes; ❌ invalid syntax
-
-Correct syntax hota:
+Correct syntax hota:</p>
 </div>
 
 <div>
@@ -451,3 +442,69 @@ count-- → pehle value compare hoti hai
 5 === 5 → true
 Baad me count 4 ho jata hai</p>
 </div>
+================================controllflow===================================
+<div>
+  <h1>Example 1 :</h1>
+
+  <p>let x = 2;</p>
+
+  <p>
+  switch(x){
+     case 2:
+       console.log("Two");
+     case 3:
+       console.log("Three");
+  }
+  </p>
+
+  <p><b>Output:</b> Two Three</p>
+
+  <p><b>Why:</b>  
+  Switch case me <code>break</code> use nahi kiya gaya hai,  
+  isliye jab <code>case 2</code> match hua to uske baad ka  
+  <code>case 3</code> bhi execute ho gaya (fall-through concept).
+  </p>
+</div>
+<div>
+  <h1>Example 2 :</h1>
+
+  <p>
+  function getGrade(score){
+    if(score >= 90 && score <= 100) return "A+";
+    else if(score >= 80) return "A";
+    else if(score >= 70) return "B";
+    else if(score >= 60) return "C";
+    else if(score >= 33) return "D";
+    else if(score >= 0) return "Fail";
+    else return "Invalid Marks";
+  }
+  </p>
+
+  <p><b>Output (getGrade(75)):</b> B</p>
+
+  <p><b>Why:</b>  
+  Score 75, 70–79 ke range me aata hai,  
+  isliye function <b>"B"</b> return karta hai.  
+  Conditions top-to-bottom check hoti hain.
+  </p>
+</div>
+<div>
+  <h1>Example 3 :</h1>
+
+  <p>Rock-Paper-Scissors Logic</p>
+
+  <p>rock - scissors --> rock</p>
+  <p>paper - rock --> paper</p>
+  <p>scissors - paper --> scissors</p>
+
+  <p><b>Why:</b>  
+  Game ke rules ke according:
+  Rock scissors ko tod deta hai,  
+  Paper rock ko cover karta hai,  
+  aur Scissors paper ko kaat deta hai.  
+  Isliye in combinations me winner decide hota hai.
+  </p>
+</div>
+
+
+
