@@ -82,3 +82,77 @@ while (d <= 10) {
 //  console.log(q);
 //  q++;
 // }
+
+// break
+for (let k = 1; k <= 201; k++) {
+    console.log(k);
+    if (k === 32){
+        break;
+    }
+}
+
+// continu
+for (let a = 1; a <= 10; a ++) {
+    if(a === 5) {
+        continue;
+    }
+    console.log(a);
+}
+
+// let q = 50;
+// while (q <= 60) {
+//  console.log(q);
+//  --q;
+// }
+
+// let f = 50;
+// while (f <= 60) {
+//  console.log(f);
+//  f--;
+// }
+
+// do-while loop
+// do {} while (end);
+// start
+// do{
+// code
+// change}
+// while(end);
+
+let j = 12; // start
+do {
+  console.log("do while loop:", j); // code
+  j++; // change (condition)
+} while (j < 20); // while check after executing code block (end)
+
+let z = 15; // start
+do {
+  console.log("do while loop error:", z); // code
+  z++; // change (condition)
+} while (z < 10);
+
+// why:
+
+// // break
+for (let k = 1; k <= 20; k++) {
+  console.log("Loop with break", k);
+  if (k === 30) {
+    break;
+  }
+}
+
+// // continue
+for (let a = 1; a <= 10; a++) {
+  if (a === 5) {
+    continue;
+  }
+  console.log(a);
+}
+
+for (let A = 1; A <= 10; A++) {
+  if (A >= 5) {
+    continue;
+  }
+}
+  
+//FOR-OF ,FOREACH FOR ARRAYS
