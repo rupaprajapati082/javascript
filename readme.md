@@ -506,5 +506,64 @@ Baad me count 4 ho jata hai</p>
   </p>
 </div>
 
+<p>------------------------------------------------------------------------</p>
+
+<div>
+<h1>Example 2:</h1>
+<p>Print number from 10 to 1 using while loop.</p>
+ <p><b>Why:</b></p>
+<p>
+while loop pehle condition check karta hai.<br>
+Jab tak condition true hoti hai, loop chalta rehta hai.<br>
+Yahan variable 10 se start hota hai aur har baar 1 se kam hota hai,<br>
+isliye numbers 10 se 1 tak print hote hain.
+</p>
+</div>
 
 
+
+
+<div>
+<h1> (Break and Continue)Example 10:</h1>
+<p>Stop at First Multiple of 7</p>
+<p>Write a Loop from 1 to 100 that:</p>
+<p>Prints Each number</p>
+<p>Stop Completely when it finds the first number divisible by 7</p>
+<p>
+for(let i=1; i<=100; i++){
+    console.log(i);
+    if(i%7 ===0){
+        break;
+    }
+}
+</p>
+ <p><b>Why:</b></p>
+  <p>
+    loop har number ko print karta hai.<br>
+    Jaise hi pehla number 7 se divisible milta hai,<br>
+    break statement loop ko poori tarah stop kar deta hai.
+  </p>
+</div>
+
+<div>
+<h1> (Break and Continue)Example 11:</h1>
+<p>Skip Multiples of 3</p>
+<p>Write a Loop From 1 to 20 that:</p>
+<p>Skip number divisible by 3</p>
+<p>Prints all other numbers</p>
+<p>
+for(let i=1; i<=20; i++){
+    if(i%3 ===0){
+        continue;
+    }
+    console.log(i);
+
+}
+</p>
+<p><b>Why:</b></p>
+  <p>
+    continue statement multiples of 3 ko skip kar deta hai.<br>
+    Jo numbers 3 se divisible nahi hain,<br>
+    sirf wahi numbers print hote hain.
+  </p>
+  </div>

@@ -154,5 +154,35 @@ for (let A = 1; A <= 10; A++) {
     continue;
   }
 }
+
+// Example 2
+
+// Print number from 10 to 1 using while loop
+
+let l = 10;
+while (l >= 1) {
+    console.log(l);
+    l--;
+}
+
+//  Example 10
+
+// Stop at First Multiple of 7
+
+for(let p = 1; p <= 100; p++){
+    console.log(p);
+    if(p % 7 === 0){
+        break;
+    }
+}
   
-//FOR-OF ,FOREACH FOR ARRAYS
+//  Example 11
+
+// Skip Multiples of 3
+
+for(let r = 1; r <= 20; r++){
+    if(r % 3 === 0){
+        continue;
+    }
+    console.log(r);
+}
