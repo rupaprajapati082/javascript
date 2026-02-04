@@ -839,3 +839,164 @@ function temp_var(){
 <p>Ans: Logs "Hello"</p>
 <p>Why: Function declarations are fully hoisted, so the function is available before its definition in the code.</p>
 </div>
+=============================================================Array======================================================
+<!-- Array Method : push, pop, shift, unshift, splice, slice, reverse -->
+
+// Q1. push()
+// Add a new task 'Buy milk'
+let tasks = ['Wake up', 'Brush teeth'];
+tasks.push('Buy milk');
+// Why: push() adds an element at the end of the array.
+
+
+// Q2. pop()
+// Remove the last notification
+let notifications = ['Email', 'Message', 'Reminder'];
+notifications.pop();
+// Why: pop() removes the last element from the array.
+
+
+// Q3. shift()
+// Remove the first customer
+let customers = ['Customer1', 'Customer2', 'Customer3'];
+customers.shift();
+// Why: shift() removes the first element of the array.
+
+
+// Q4. unshift()
+// Add a new song at the beginning
+let playlist = ['Song B', 'Song C'];
+playlist.unshift('Song A');
+// Why: unshift() adds an element at the start of the array.
+
+
+// Q5. splice()
+// Remove 'Alex' and add 'John' and 'Sara'
+let students = ['Mike', 'Alex', 'Emma', 'Sophia'];
+students.splice(1, 1, 'John', 'Sara');
+// Why: splice(start, deleteCount, items...) removes and adds elements at the same position.
+
+
+// Q6. splice()
+// Remove 2 items starting from index 1
+let menu = ['Burger', 'Pizza', 'Pasta', 'Salad'];
+menu.splice(1, 2);
+// Why: splice() can remove multiple elements starting from a given index.
+
+
+// Q7. slice()
+// Create a new array of weekend days
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+let weekend = days.slice(5, 7);
+// Why: slice() returns a new array without changing the original.
+
+
+// Q8. reverse()
+// Reverse the order of levels
+let levels = ['Easy', 'Medium', 'Hard'];
+levels.reverse();
+// Why: reverse() reverses the array and mutates the original array.
+
+
+// Q9. sort()
+// Sort scores in ascending order
+let scores = [45, 12, 78, 34, 89];
+scores.sort((a, b) => a - b);
+// Why: compare function is needed to sort numbers correctly.
+
+
+// Q10. sort() with numbers
+// Sort prices from lowest to highest
+let prices = [199, 49, 999, 299, 149];
+prices.sort((a, b) => a - b);
+// Why: default sort treats numbers as strings, so comparator is required.
+
+
+// Q11. slice() vs splice()
+// First 3 items without changing original array
+let products = ['Laptop', 'Phone', 'Tablet', 'Monitor', 'Keyboard'];
+let firstThree = products.slice(0, 3);
+// Why: slice() does not mutate the original array.
+
+
+// Q12. splice() complex
+// Remove 'Blue' and add 'Purple' and 'Orange'
+let colors = ['Red', 'Green', 'Blue', 'Yellow'];
+colors.splice(2, 1, 'Purple', 'Orange');
+// Why: Blue is removed and new colors are inserted at the same index.
+
+
+// Q13. reverse() + push()
+// Reverse and add 'Final Step'
+let steps = ['Step 1', 'Step 2', 'Step 3'];
+steps.reverse();
+steps.push('Final Step');
+// Why: reverse() changes order, push() adds element at end.
+
+
+// Q14. sort() strings ignoring case
+let names = ['alice', 'Bob', 'charlie', 'David'];
+names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+// Why: toLowerCase() helps in case-insensitive sorting.
+
+
+// Q15. Combination Question
+// Add, remove first, then sort
+let movies = ['Avatar', 'Titanic', 'Gladiator'];
+movies.push('Inception');
+movies.shift();
+movies.sort();
+// Why: push() adds, shift() removes first, sort() arranges alphabetically.
+
+
+// Q16. splice() return value
+let nums1 = [1, 2, 3, 4];
+let removed = nums1.splice(1, 2);
+// Answer: removed = [2, 3]
+// Why: splice() returns an array of removed elements.
+
+
+// Q17. slice() immutability check
+let nums2 = [10, 20, 30, 40];
+let result = nums2.slice(1, 3);
+// Answer: original array does not change.
+// Why: slice() is non-mutating.
+
+
+// Q19. reverse() mutation
+let letters = ['a', 'b', 'c'];
+let reversedLetters = letters.reverse();
+// Answer: both variables reference the same reversed array.
+// Why: reverse() mutates the array.
+
+
+// Q21. splice() edge case (deleteCount = 0)
+let arr = ['x', 'y', 'z'];
+arr.splice(1, 0, 'new');
+// Answer: ['x', 'new', 'y', 'z']
+// Why: no element is deleted, only inserted.
+
+
+// Q23. slice() negative index
+let values = [100, 200, 300, 400, 500];
+let sliced = values.slice(-3, -1);
+// Answer: [300, 400]
+// Why: negative index counts from the end.
+
+
+// Q24. splice() vs slice()
+// Which method to use?
+// a) Update the original array
+// Answer: splice()
+// Why: splice() directly modifies (mutates) the original array.
+
+// b) Keep the original array unchanged
+// Answer: slice()
+// Why: slice() returns a new array and does not change the original one.
+
+
+// Q25. Chained methods
+let arr2 = [1, 2, 3];
+arr2.push(arr2.shift());
+// Answer: [2, 3, 1]
+// Why: shift() removes first element and push() adds it at the end.
