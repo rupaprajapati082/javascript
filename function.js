@@ -232,3 +232,285 @@ temp_fnc2();
 function temp_fnc2(){
     console.log("Hoisting in function expression")
 };
+
+/*************************
+ Example 1
+ Difference between function declaration & expression (hoisting)
+*************************/
+
+// Function Declaration → hoisted
+greet(); // works
+function greet(){
+  console.log("Hello");
+}
+greet(); // works
+
+// OUTPUT:
+// Hello
+// Hello
+
+// ❌ Function Expression (not hoisted)
+// Uncommenting below will cause error if called before definition
+// const greet = function(){
+//   console.log("Hello");
+// }
+
+
+
+/*************************
+ Example 2
+*************************/
+
+greet(); // works because function declaration is hoisted
+
+function greet(){
+    console.log("Hello!");
+}
+
+// OUTPUT:
+// Hello!
+
+
+
+/*************************
+ Example 3
+ Convert normal function to arrow function
+*************************/
+
+// ❌ ERROR: Identifier 'add' has already been declared
+// function add(a, b){
+//     return a + b;
+// }
+
+// const add = (a, b) => a + b;
+
+// ✅ Correct way (use only ONE)
+const add = (a, b) => a + b;
+console.log(add(2, 3));
+
+// OUTPUT:
+// 5
+
+
+
+/*************************
+ Example 4
+ Parameters vs Arguments
+*************************/
+
+function welcome(name){ // name → parameter
+    console.log("Welcome " + name);
+}
+
+welcome("user"); // "user" → argument
+
+// OUTPUT:
+// Welcome user
+
+
+
+/*************************
+ Example 5
+ Missing arguments
+*************************/
+
+function temp (a, b, c){
+    console.log(a, b, c);
+}
+
+temp(1, 2);
+
+// OUTPUT:
+// 1 2 undefined
+// ❌ No error → missing argument becomes undefined
+
+
+
+/*************************
+ Example 6
+ Default parameter
+*************************/
+
+function temp_user(name = "Guest"){
+    console.log("Hello " + name);
+}
+
+temp_user();
+
+// OUTPUT:
+// Hello Guest
+
+
+
+/*************************
+ Example 7
+ Rest operator
+*************************/
+
+function number(...numbers){
+    console.log(numbers);
+}
+
+number(1, 2, 3, 4, 5);
+
+// OUTPUT:
+// [1, 2, 3, 4, 5]
+// ...numbers collects arguments into an array
+
+
+
+/*************************
+ Example 8
+ Rest parameters + total
+*************************/
+
+// ❌ WRONG LOOP (kept as comment – causes NaN)
+// for(let i = 0; i <= scores.length; i++)
+
+// ✅ Correct function
+function calculateTotal(...scores){
+    let total = 0;
+    scores.forEach(function(val){
+        total = total + val;
+    });
+    return total;
+}
+
+let sumtotal = calculateTotal(10, 20, 30, 40, 50);
+console.log(sumtotal);
+
+// OUTPUT:
+// 150
+
+
+
+/*************************
+ Example 9
+ Early return
+*************************/
+
+// Original (works but not optimized)
+function checkAge(age){
+    if(age < 18){
+        console.log("Too Young");
+    } else {
+        console.log("Access Granted");
+    }
+}
+
+checkAge(16);
+checkAge(21);
+
+// OUTPUT:
+// Too Young
+// Access Granted
+
+
+
+/*************************
+ Example 10
+ Return value
+*************************/
+
+function f(){ 
+    return;
+}
+
+console.log(f());
+
+// OUTPUT:
+// undefined
+// Example 11: Functions are first-class citizens
+function greetFn() {
+    console.log("Hello");
+}
+let greetVar = greetFn; // assigned to variable
+greetVar(); // called via variable
+
+// Example 12: Assign function to a variable and call it
+let sayHello = function() {
+    console.log("Hello from sayHello");
+};
+sayHello(); // prints "Hello from sayHello"
+
+// Example 13: Pass a function into another function and execute it
+function executeFn(callback) {
+    callback();
+}
+executeFn(function() { console.log("Hello from callbackFn"); });
+
+// Example 14: Higher-order function
+function higherOrderFn(fnArg) {
+    console.log("Before calling fnArg");
+    fnArg();
+}
+higherOrderFn(function() { console.log("Inside higher-orderFn"); });
+
+// Example 16: Impure function
+let totalSum = 0;
+function addToTotal(val) {
+    totalSum += val;
+}
+addToTotal(3);
+console.log("Impure totalSum:", totalSum); // modifies external variable
+
+// Example 17: Pure function
+function addPure(a, b) {
+    return a + b;
+}
+let pureSum = addPure(5, 3);
+console.log("Pure sum:", pureSum); // does not modify outside state
+
+// Example 18: Closure
+function outerFn() {
+    let countValue = 0;
+    return function() {
+        countValue++;
+        console.log("Closure countValue:", countValue);
+    };
+}
+const counterFn = outerFn();
+counterFn();
+counterFn();
+
+// Example 19: Logging with closure
+const counterFn2 = outerFn();
+counterFn2(); // 1
+counterFn2(); // 2
+
+// Example 20: IIFE (Immediately Invoked Function Expression)
+(function initFn() {
+    console.log("Initialized via IIFE");
+})();
+
+// Example 21: IIFE for private variables
+let scoreManager = (function() {
+    let scoreValue = 0; // private
+    return {
+        getScore: function() {
+            console.log("Score:", scoreValue);
+        },
+        setScore: function(val) {
+            scoreValue = val;
+        }
+    };
+})();
+scoreManager.getScore(); // 0
+scoreManager.setScore(10);
+scoreManager.getScore(); // 10
+
+// Example 22: Function expression called before definition
+try {
+    tempFunc(); // Error: tempFunc is not a function
+} catch (e) {
+    console.log("Error:", e.message);
+}
+var tempFunc = function() {
+    console.log("Hello from tempFunc");
+};
+
+// Example 23: Function declaration called before definition
+tempFunc2(); // Prints "Hello from tempFunc2"
+function tempFunc2() {
+    console.log("Hello from tempFunc2");
+}
