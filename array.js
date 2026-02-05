@@ -239,3 +239,74 @@ let sliced = values.slice(-3, -1);
 // What is the final value of arr?
 let arr2 = [1, 2, 3];
 arr2.push(arr2.shift())
+
+//FOR EACH Loop
+// //FOR EACH --ARRAY NI DAREK VALUE MATE LOOP CHALSE 
+let i=[10,35,40,68];
+i.forEach((val)=>{
+    let new_val=val+10;
+    console.log(new_val);
+
+});
+[5,58,42,"hello"].forEach(val =>
+{
+    let new_arr=val+2;
+    console.log(new_arr)
+}
+)
+// .map() method:
+//map tyare j use karvu ke jyare ek new array create karvo chhe 
+// first map create a balck array --only for  understanding
+let data = [10, 20, 50, 40, 15];
+
+// same like a for each loop but map return a new array
+let temp_data = data.map((val) => {
+// when undefined na lavu hoy tyare filter use karvu
+    // let temp_data = data.filter((val) => {
+    if (val > 20) {
+        return val;
+    }
+});
+
+// use case -- data ma thi specific data new array ma
+// store karvo hoy
+// ex. product ma thi specific category na product
+// new array ma store karva hoy
+
+// if you want to show only electronics product on
+// your homepage
+let marks = [10, 5, 20, 25, 15];
+
+let final_marks = marks.map((val) => {
+    if (val == 5) {
+        return val + 4;
+    }
+    return val;
+});
+
+// filter
+// filter tyare use karvu ke jyare ek new array create karvo chhe with condition
+// in return true/false
+// if true  --> add into new array
+// if else(false) --> not add into new array
+
+let laptops_price = [15000, 20000, 30000, 65000, 99000, 45000];
+
+let expensive_laptops = laptops_price.filter((price) => {
+    if (price > 30000) return true;
+});
+
+// je value 30000 thi vadhare chhe te new array ma
+// add thase and biji value ne array ma add nahi kare
+// use case -- data ma thi specific data new array ma store karvo hoy based on condition
+// ex. product ma thi specific price na product new array ma store karva hoy
+// if you want to show only expensive product on your homepage
+
+// if you want to filter product based on price
+
+let  product_name= ["mobile", "laptop","tablet", "keypad phone","monitor"];
+
+let  any_product= product_name.filter((type) => {
+    if (type ==="mobile" || type==="monitor") 
+        return true;
+});
