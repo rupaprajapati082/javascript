@@ -310,3 +310,147 @@ let  any_product= product_name.filter((type) => {
     if (type ==="mobile" || type==="monitor") 
         return true;
 });
+
+//reduce
+// reduce tyare j use karvu ke jare ek single value calculate karvi hoy from array
+
+let total_price = [10, 68, 45, 58, 52, 48];
+
+let final_price = total_price.reduce((accumulator, val) => {
+    return accumulator + val;
+}, 0); // intial value of accumulator
+
+// 0 + 10 => 10
+// 10 + 10 => 20
+// 20 + 10 => 30
+// 30 + 10 => 40
+console.log("final price:",final_price)
+// accumulator --> je value function ma return thase accumulator ma store thase --> accumulator name chnage kari sako chho
+//val--> array ni darek value
+//use casw --data ma thik k single value calculate karvi hoy
+//ex.product ma thi total price calculate karvi hoy 
+
+
+// find
+// find tyare j use karvu ke jare array mathi ek value find karvi hoy based on condition
+
+// find() return kare chhe array no element --> callback no return value par thi
+// never returns what you return inside it
+// returns the array element itself -- not return array
+// .find() stops at the first match
+// It does not continue looping
+
+let product = ["Laptop", "Mobile", "Tablet",
+"Desktop", "Smart Watch"];
+
+let find_product = product.find(function (item) {
+    console.log("cant find product") ;
+    if(item === "Mobile"){
+        return true;
+    }else if (item==="Laptop"){
+        return true;
+    }
+    else {
+        return "Not Found";
+        //console.log("cant find product"); //not working
+    }
+    }
+    
+);
+
+
+// use case -- data ma thi ek value find karvi hoy based on condition
+
+// ex. product ma thi specific product find karvo by based on name
+
+// find vs filter
+// Real-life Scenario: Shopping Mall Security
+// You are a security guard at a shopping mall
+// check the list of visitors
+
+let people = ["John", "Sara", "Nike", "Anna",
+"David", "Sara"];
+
+// find("Sara") are looking for the first person named "Sara" in the list and stop searching (Pehli var j male ,bas e j and anagal check j na kare)
+let person = people.find((name) => name === "Sara");
+console.log(person);
+
+//filter --> you want to find all visitors named "sara" in the list (all data check kare and list na end sudhi check kare)
+let Allsara = people.filter((name) => name === "Sara");
+console.log(Allsara);
+
+//eaxmple 2: books bus for travel
+
+// some
+// check kare chhe ke array ma koi pan ek item condition satisfy kare chhe ke nahi
+
+// condition true aave tyare stop kare
+// some() vs find() --> some() can't return you valueits return true or false, find() return value of array
+// give ans in true and false
+
+let marks1 = [10, 20, 35, 80];
+let any= marks1.some(function (val) {
+    if (val > 85) return 12;
+    // if (val < 85) return "need improvement";
+});
+
+// use case -- check if some product are out of stock in you cart
+
+
+// every
+// check kare chhe ke array ma baddha j items condition satisfy kare chhe ke nahi
+// true -- baha items condition match kare
+// false -- ek pan fail thay to
+
+let def = [20, 30, 40, 50];
+let num = def.every(function(val){
+    return val <= 50;
+})
+
+// use case --> check all student is pass or not
+
+// some(), find(), filter(), every()
+
+// let products = ["Tablet", "Mobile", "Laptop","Mobile"]
+
+// method --> condition --> output
+
+// .some()   --> item === "Mobile" --> true
+// .find()   --> item === "Mobile" --> "Mobile"
+// .filter() --> item === "Mobile" --> ["Mobile", "Mobile"]
+
+// .every()  --> item === "Mobile" --> false
+
+// ==================================================================================
+// Destructuring operator -- give value to variable
+// (ex. we don't use everytime arr[1], just save it
+// into variable let j, k) = arr1)
+
+let arr4 = [1, 2, 3, 4, 5]
+let [, , k] = arr4; // --> desthucturing
+// let [j, , k] = arr;
+
+console.log(k);
+
+let user_data=["text","text@gmail.com","Male","Surat"]
+let [, j] = user_data; 
+console.log(j)
+
+
+
+// spread oprator -- copy value from main array
+let arr8 = [1, 2, 3, 4, 5, 6, 7];
+
+// let arr4 = arr3;  // - just give reference not copy value (when you change into arr4 that will be change arr3 too)
+
+let arr9 = [...arr8];
+
+// ... --> rest --> into function
+// ... --> spred --> into Array
+// =================intheconsole==================
+// arr9
+// (7) [1, 2, 3, 4, 5, 6, 7]
+// arr9.pop()
+// 7
+// arr8
+// (7) [1, 2, 3, 4, 5, 6, 7]
