@@ -1564,3 +1564,887 @@ console.log('Comma-separated items:', result); // "Pen, Book, Pencil"
   <p>Answer or Error: 300</p>
   <p>Why: 3 se divisible numbers ka final sum.</p>
 </div>
+
+
+/*****************************************************
+ 🟢 VARIABLES & DATA TYPES (1–15)
+*****************************************************/
+
+let a = "a";
+let b = "10";
+let c = 10;
+let d;
+let e = null;
+
+// 1
+console.log(a == "a");   // true (value check)
+console.log(a === "a");  // true (value + type same)
+
+// 2
+console.log(b == c);   // true (string "10" → number 10)
+console.log(b === c);  // false (string !== number)
+// ERROR REASON: == does type coercion, === does not.
+
+// 3
+b = Number(b);
+console.log(b === c); // true
+
+// 4
+console.log(d === undefined); // true
+
+// 5
+if (d == null) console.log("d is null or undefined");
+if (e == null) console.log("e is null or undefined");
+
+// 6
+console.log(null == undefined);  // true
+console.log(null === undefined); // false
+
+// 7
+console.log(c + "10"); // "1010" (string concat)
+console.log(c + Number("10")); // 20 (fixed)
+
+// 8
+let result = c / "a";
+console.log(Number.isNaN(result)); // true
+
+// 9
+let num1 = Number("10");
+let num2 = +"10";
+
+// 10
+let str1 = String(c);
+let str2 = c.toString();
+
+// 11
+console.log(Boolean(0)); // false
+console.log(!!"hello");  // true
+
+// 12
+const pi = 3.14;
+// pi = 3; ❌ ERROR: Assignment to constant variable
+
+// 13
+let x = 5;
+let y = x;
+y = 20;
+console.log(x); // 5 (unchanged)
+
+// 14
+console.log(0 == false); // true (coercion)
+
+// 15
+console.log("5" === 5); // false (fixed using strict equality)
+
+
+
+/*****************************************************
+ 🟢 OPERATORS (16–30)
+*****************************************************/
+
+// 16 Even without %
+let n = 4;
+console.log((n & 1) === 0);
+
+// 17 Max without if or Math.max
+let m1 = 5, m2 = 9;
+let max = m1 > m2 ? m1 : m2;
+
+// 18 Calculator
+function calc(a,b,op){
+  if(op==="+") return a+b;
+  if(op==="-") return a-b;
+  if(op==="*") return a*b;
+  if(op==="/") return a/b;
+}
+
+// 19 Default
+let username = null;
+console.log(username ?? "Guest");
+
+// 20
+let age = 18;
+let status = age>=18 ? "Adult":"Minor";
+
+// 21
+let marks = 85;
+let grade = marks>=90?"A":marks>=75?"B":"C";
+
+// 22
+true && console.log("Executed");
+
+// 23
+console.log(false && "Won’t run");
+
+// 24
+console.log("5" == 5);  // true
+console.log("5" === 5); // false
+
+// 25
+let val = null;
+console.log(val ?? "Default");
+
+// 26
+console.log(0 || 100);  // 100
+console.log(0 ?? 100);  // 0
+
+// 27
+let arr1=[1,2], arr2=[3,4];
+let merged=[...arr1,...arr2];
+
+// 28
+function sumAll(...nums){
+  return nums.reduce((a,b)=>a+b,0);
+}
+
+// 29
+let copy=[...arr1];
+copy.push(99);
+
+// 30
+console.log(2+3*4); // 14 (multiplication first)
+
+
+
+/*****************************************************
+ 🟡 CONTROL FLOW (31–45)
+*****************************************************/
+
+// 31
+function gradeSys(m){
+ if(m>=90) return "A";
+ else if(m>=75) return "B";
+ else return "C";
+}
+
+// 32
+function gradeSwitch(g){
+ switch(true){
+  case g>=90: return "A";
+  case g>=75: return "B";
+  default: return "C";
+ }
+}
+
+// 33
+switch(2){
+ case 1: console.log("One");
+ case 2: console.log("Two"); // fall-through
+}
+
+// 34
+let user="admin", pass="123";
+if(user==="admin"){
+ if(pass==="123") console.log("Login success");
+}
+
+// 35
+if(user==="admin" && pass==="123") console.log("Login success");
+
+// 36
+if(true && true) console.log("Both true");
+
+// 37
+if(age>18 || age===18) console.log("Valid");
+
+// 38
+let choice=1;
+switch(choice){
+ case 1: console.log("Start"); break;
+ case 2: console.log("Stop"); break;
+}
+
+// 39 Missing break shows fall-through
+
+// 40 if-else equivalent of switch done above
+
+// 41
+let num=50;
+if(num>=1 && num<=100) console.log("In range");
+
+// 42
+function test(val){
+ if(!val) return "Invalid";
+ return "Valid";
+}
+
+// 43
+let light="red";
+switch(light){
+ case "red": console.log("Stop"); break;
+ case "green": console.log("Go"); break;
+}
+
+// 44
+let rain=true;
+if(rain) console.log("Take umbrella");
+
+// 45
+function divide(a,b){
+ if(b===0) return "Cannot divide by zero";
+ return a/b;
+}
+
+
+
+/*****************************************************
+ 🟡 LOOPS (46–60)
+*****************************************************/
+
+// 46
+for(let i=1;i<=100;i++) console.log(i);
+
+// 47
+for(let i=2;i<=100;i+=2) console.log(i);
+
+// 48
+for(let i=1;i<=10;i++){
+ if(i===5) break;
+}
+
+// 49
+for(let i=1;i<=10;i++){
+ if(i%3===0) continue;
+}
+
+// 50
+let sum=0;
+for(let i=1;i<=5;i++) sum+=i;
+
+// 51 Reverse number
+let numRev=123, rev=0;
+while(numRev>0){
+ rev=rev*10+numRev%10;
+ numRev=Math.floor(numRev/10);
+}
+
+// 52 Count digits
+let count=0,temp=12345;
+while(temp>0){ count++; temp=Math.floor(temp/10); }
+
+// 53 Factorial
+let fact=1;
+for(let i=1;i<=5;i++) fact*=i;
+
+// 54 Fibonacci
+let f1=0,f2=1;
+for(let i=0;i<5;i++){
+ let next=f1+f2;
+ f1=f2; f2=next;
+}
+
+// 55 Break nested
+outer: for(let i=0;i<3;i++){
+ for(let j=0;j<3;j++){
+  break outer;
+ }
+}
+
+// 56 continue shown above
+
+// 57 Multiplication
+for(let i=1;i<=10;i++) console.log(5*i);
+
+// 58 Infinite loop fix
+let k=0;
+while(k<5){ k++; }
+
+// 59 for vs while → for when count known
+
+// 60
+[1,2,3].forEach(n=>console.log(n));
+
+
+
+/*****************************************************
+ 🟡 FUNCTIONS (61–80)
+*****************************************************/
+
+// 61
+function sum(a,b){ return a+b; }
+
+// 62
+const sumArrow=(a,b)=>a+b;
+
+// 63
+function greet(name="Guest"){ return name; }
+
+// 64
+function outer(){ return function(){ return "Inner"; } }
+
+// 65
+function run(fn){ fn(); }
+
+// 66
+function process(cb){ cb("Done"); }
+
+// 67 Pure
+function add(a,b){ return a+b; }
+
+// 68 Side effect
+let counter=0;
+function inc(){ counter++; }
+
+// 69 Recursion
+function factRec(n){
+ if(n===1) return 1;
+ return n*factRec(n-1);
+}
+
+// 70 Iterative
+function factIter(n){
+ let r=1;
+ for(let i=1;i<=n;i++) r*=i;
+ return r;
+}
+
+// 71
+function total(...args){
+ return args.reduce((a,b)=>a+b,0);
+}
+
+// 72
+function hof(fn){ return fn(5); }
+
+// 73 Closure
+function counterFn(){
+ let c=0;
+ return ()=>++c;
+}
+
+// 74 Counter
+let cnt=counterFn();
+
+// 75 Currying
+const multiply=a=>b=>a*b;
+
+// 76 Memoization
+function memo(){
+ let cache={};
+ return function(n){
+  if(cache[n]) return cache[n];
+  return cache[n]=n*n;
+ }
+}
+
+// 77
+function safe(a){
+ if(typeof a!=="number") return "Invalid";
+ return a*2;
+}
+
+// 78 Arrow doesn’t have own this
+
+// 79 Run once
+let once=(function(){
+ let done=false;
+ return function(){
+  if(!done){ done=true; console.log("Run"); }
+ }
+})();
+
+// 80 DRY
+function square(n){ return n*n; }
+
+
+
+/*****************************************************
+ 🔵 ARRAYS (81–101)
+*****************************************************/
+
+let arr=[1,2,3,4,5];
+
+// 81
+arr.reduce((a,b)=>a+b,0);
+
+// 82
+Math.max(...arr);
+
+// 83
+[...new Set([1,2,2,3])];
+
+// 84
+let sorted=[...arr].sort((a,b)=>b-a);
+let second=sorted[1];
+
+// 85
+arr.filter(n=>n>0);
+
+// 86
+arr.map(n=>n*n);
+
+// 87
+arr.reduce((c)=>c+1,0);
+
+// 88
+arr.filter(n=>n>2).map(n=>n*2).reduce((a,b)=>a+b,0);
+
+// 89
+arr.find(n=>n>3);
+
+// 90
+arr.some(n=>n>4);
+
+// 91
+arr.every(n=>n>0);
+
+// 92
+let [first,...rest]=arr;
+
+// 93
+[...arr,...[6,7]];
+
+// 94 Deep clone
+JSON.parse(JSON.stringify(arr));
+
+// 95 Bubble sort
+function bubble(a){
+ for(let i=0;i<a.length;i++){
+  for(let j=0;j<a.length-1;j++){
+   if(a[j]>a[j+1]){
+    [a[j],a[j+1]]=[a[j+1],a[j]];
+   }
+  }
+ }
+ return a;
+}
+
+// 96 Rotate
+function rotate(a){
+ return [...a.slice(1),a[0]];
+}
+
+// 97 Flatten
+function flat(a){
+ return a.reduce((acc,val)=>
+  Array.isArray(val)?acc.concat(flat(val)):acc.concat(val),[]);
+}
+
+// 98 Custom map
+Array.prototype.myMap=function(cb){
+ let res=[];
+ for(let i=0;i<this.length;i++){
+  res.push(cb(this[i],i,this));
+ }
+ return res;
+}
+
+// 99 Custom filter
+Array.prototype.myFilter=function(cb){
+ let res=[];
+ for(let i=0;i<this.length;i++){
+  if(cb(this[i])) res.push(this[i]);
+ }
+ return res;
+}
+
+// 100 Custom reduce
+Array.prototype.myReduce=function(cb,acc){
+ for(let i=0;i<this.length;i++){
+  acc=cb(acc,this[i]);
+ }
+ return acc;
+}
+
+// 101 FINAL BOSS
+let final = arr
+ .filter(n=>n%2===0)
+ .map(n=>n*10)
+ .reduce((a,b)=>a+b,0);
+
+console.log(final);
+
+# JavaScript Interview Questions & Answers
+
+---
+
+# 🟢 BEGINNER LEVEL (1–20)
+
+### Q1. What is the difference between `var`, `let`, and `const`?
+**Answer:**  
+`var` is function-scoped and can be redeclared and reassigned.  
+`let` is block-scoped and can be reassigned but not redeclared.  
+`const` is block-scoped and cannot be reassigned.
+
+---
+
+### Q2. Name all primitive data types in JavaScript.
+**Answer:**  
+string, number, boolean, null, undefined, bigint, symbol
+
+---
+
+### Q3. How do you check the type of a variable?
+**Answer:**  
+Using the `typeof` operator.
+
+---
+
+### Q4. What is the difference between `==` and `===`?
+**Answer:**  
+`==` compares values only (allows type coercion).  
+`===` compares value and type (strict comparison).
+
+---
+
+### Q5. What will be the output?
+```js
+let x = 10;
+console.log(x + 5 * 2);
+```
+**Answer:** 20
+
+---
+
+### Q6. What is the output?
+```js
+console.log('5' + 2);
+```
+**Answer:** "52"
+
+---
+
+### Q7. What is the result?
+```js
+console.log(true && false);
+```
+**Answer:** false
+
+---
+
+### Q8. What is a function and why is it used?
+**Answer:**  
+A function is a reusable block of code used to perform a specific task.
+
+---
+
+### Q9. What will this return?
+```js
+function add(a, b) {
+  return a + b;
+}
+add(2, 3);
+```
+**Answer:** 5
+
+---
+
+### Q10. How do you create an array in JavaScript?
+**Answer:**
+```js
+let arr = [1, 2, 3];
+```
+
+---
+
+### Q11. What is the output?
+```js
+const arr = [10, 20, 30];
+console.log(arr[1]);
+```
+**Answer:** 20
+
+---
+
+### Q12. What is an object in JavaScript?
+**Answer:**  
+An object is a collection of key-value pairs.
+
+---
+
+### Q13. What is the output?
+```js
+const user = { name: 'A', age: 20 };
+console.log(user.age);
+```
+**Answer:** 20
+
+---
+
+### Q14. What does an `if` statement do?
+**Answer:**  
+It executes code only if the given condition is true.
+
+---
+
+### Q15. What is the output?
+```js
+let x = 5;
+if (x > 3) console.log('Yes');
+```
+**Answer:** Yes
+
+---
+
+### Q16. What is a loop and why is it used?
+**Answer:**  
+A loop is used to execute a block of code multiple times.
+
+---
+
+### Q17. What is the output?
+```js
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+```
+**Answer:**
+0  
+1  
+2  
+
+---
+
+### Q18. When should you use a `while` loop?
+**Answer:**  
+When the number of iterations is not known beforehand.
+
+---
+
+### Q19. What is the result?
+```js
+let a = 5;
+a++;
+console.log(a);
+```
+**Answer:** 6
+
+---
+
+### Q20. How do you write comments?
+**Answer:**  
+Single-line: `// comment`  
+Multi-line: `/* comment */`
+
+---
+
+# 🟡 INTERMEDIATE LEVEL (21–35)
+
+### Q21. What is block scope?
+**Answer:**  
+Variables declared with `let` and `const` are accessible only inside `{}`.
+
+---
+
+### Q22. What is hoisting?
+**Answer:**  
+JavaScript moves variable and function declarations to the top of their scope before execution.
+
+---
+
+### Q23. Difference between `undefined` and `null`?
+**Answer:**  
+`undefined` means a variable is declared but not assigned.  
+`null` means an intentional empty value.
+
+---
+
+### Q24. List all falsy values.
+**Answer:**  
+false, 0, "", null, undefined, NaN
+
+---
+
+### Q25. Difference between normal and arrow functions?
+**Answer:**  
+Arrow functions do not have their own `this`, have shorter syntax, and cannot be used as constructors.
+
+---
+
+### Q26. Parameters vs Arguments?
+**Answer:**
+```js
+function add(a, b) {} // parameters
+add(2, 3); // arguments
+```
+Parameters are variables in function definition.  
+Arguments are values passed during function call.
+
+---
+
+### Q27. What happens if a function does not return anything?
+**Answer:**  
+It returns `undefined`.
+
+---
+
+### Q28. Difference between `push()` and `pop()`?
+**Answer:**  
+`push()` adds element at end.  
+`pop()` removes last element.
+
+---
+
+### Q29. When should you use loops instead of array methods?
+**Answer:**  
+When you need more control like `break` or `continue`.
+
+---
+
+### Q30. How to loop through object properties?
+**Answer:**
+```js
+for (let key in obj) {
+  console.log(key, obj[key]);
+}
+```
+
+---
+
+### Q31. Explain `break` and `continue`.
+**Answer:**  
+`break` stops the loop.  
+`continue` skips the current iteration.
+
+---
+
+### Q32. What is the result?
+```js
+console.log(0 == false);
+console.log(0 === false);
+```
+**Answer:**  
+true  
+false  
+
+---
+
+### Q33. Rewrite using ternary:
+```js
+if (age >= 18) {
+  status = 'adult';
+}
+```
+**Answer:**
+```js
+status = age >= 18 ? 'adult' : status;
+```
+
+---
+
+### Q34. What is array destructuring?
+**Answer:**
+```js
+let [a, b] = [1, 2];
+```
+It extracts values from arrays into variables.
+
+---
+
+### Q35. What does spread operator do?
+**Answer:**
+```js
+let newArr = [...arr];
+```
+It copies or merges arrays.
+
+---
+
+# 🔵 ADVANCED LEVEL (36–50)
+
+### Q36. What is a closure?
+**Answer:**
+A function that remembers its outer scope even after outer function executes.
+
+---
+
+### Q37. What is execution context?
+**Answer:**  
+The environment where JavaScript code runs.
+
+---
+
+### Q38. What is the call stack?
+**Answer:**  
+A stack that keeps track of function execution (LIFO).
+
+---
+
+### Q39. Pass by value vs reference?
+**Answer:**  
+Primitives → copied by value.  
+Objects/Arrays → copied by reference.
+
+---
+
+### Q40. Shallow vs Deep Copy?
+**Answer:**  
+Shallow copy copies reference.  
+Deep copy copies full nested structure.
+
+---
+
+### Q41. What is a higher-order function?
+**Answer:**  
+A function that takes or returns another function.
+
+---
+
+### Q42. What is a callback function?
+**Answer:**  
+A function passed as an argument to another function.
+
+---
+
+### Q43. Why is immutability important?
+**Answer:**  
+It prevents accidental data changes and makes code predictable.
+
+---
+
+### Q44. What is the event loop?
+**Answer:**  
+It handles asynchronous operations by managing call stack and callback queue.
+
+---
+
+### Q45. Difference between synchronous and asynchronous?
+**Answer:**  
+Synchronous runs line by line.  
+Asynchronous runs without blocking execution.
+
+---
+
+### Q46. Difference between `forEach` and `map`?
+**Answer:**  
+`forEach()` does not return a new array.  
+`map()` returns a new array.
+
+---
+
+### Q47. What is the output?
+```js
+console.log([] == []);
+```
+**Answer:** false
+
+---
+
+### Q48. What is the output?
+```js
+console.log(typeof null);
+```
+**Answer:** "object"
+
+---
+
+### Q49. How do you check if a value is NaN?
+**Answer:**
+```js
+Number.isNaN(value);
+```
+
+---
+
+### Q50. Explain how JavaScript runs from start to finish.
+**Answer:**  
+1. Global Execution Context is created.  
+2. Hoisting happens.  
+3. Code runs line by line (Call Stack).  
+4. Functions are pushed/popped from stack.  
+5. Async tasks handled by Web APIs.  
+6. Event Loop moves callbacks to stack.  
+7. Execution completes.
+
+---
+
