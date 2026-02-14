@@ -100,3 +100,105 @@ let user_data_assign1 = Object.assign({phone_number: 7894567894}, demo);  // - a
 // };
 // const finalSettings = Object.assign({}, defaultSettings, userSettings);
 // console.log(finalSettings);
+
+// deep clone
+let temp_user1_clone = { ...user1 }
+// user1_clone.address.city = "Valsad" --> that will change value of user1 too
+// issue : when you clone & copy nested object using spred or object.assign into new
+// variable that copy all value but nested object pass only refrence not copy
+// (jyare tame nested object(parent obj.) spred ma upyog thi copy karo tyare nested obj.
+// (child obj.) reference pass karshe -- value copy thase nahi)
+// How to clone that -- use deep clone
+// first convert your object to string
+// JSON - JavaScript Object Notation
+// JSON.stringify(obj_name) -- convert object into string
+// JSON.parse(stringify_Object) -- convert string to object
+let clone_user1 = JSON.parse(JSON.stringify(user1))
+// Deep clone = completely new memory
+// use case:
+// Real time use:
+// API response handling
+// Avoid data mutation bugs
+
+// object.key -- add all keys into array formate
+// object.key -- add all keys into array formate
+let key_arr = Object.keys(demo);
+// Use case: User profile form validation
+// ex. website par thi user form ma data add kare chhe ane te data
+// backend pase object formate ma aave chhe
+// const userProfile = {
+//   name: "Rahul",
+//   email: "rahul@gmail.com",
+//   age: 25
+// };
+// // now check how many field user fill up
+// const keys = Object.keys(userProfile);
+// console.log(keys);
+// console.log(keys.length);
+
+// Object.entries -- add key and value into array formate
+// give array of arrays
+let key_value_arr = Object.entries(demo);
+// Use case: Display user details dynamically (UI)
+// ex. backend give you data into object formate
+// const user3 = {
+//   name: "Priya",
+//   city: "Ahmedabad",
+//   role: "Admin"
+// };
+// print key and value both in profile page
+// Object.entries(user3).forEach(([key, value]) => {
+//   console.log(`${key} : ${value}`);
+// });
+// Object.entries(user) => convert into Arrays
+// forEach => Array loop
+// Optional Chaining, Computed Properties
+// user1.address.location.lng;
+user1?.address?.location?.lng; // -- ? Optional Chaining
+
+// use case:
+// Without optional chaining → app crash
+// Backend data incomplete
+// API response safety
+
+// const apiResponse = {
+//   user: {
+//     profile: {
+//       name: "Neha"
+//     }
+//   }
+// };
+
+// console.log(apiResponse.user?.profile?.name);
+// console.log(apiResponse.user?.address?.city);
+// -------------------------------------------
+// Computed Properties
+let role = "admin";
+
+let user2 = {
+  name: "test",
+  age: 26,
+  email: "test@gmail.com",
+  address: {
+    city: "Surat"
+  },
+  [role]: "test"
+};
+
+// Use case: Dynamic object keys
+// const fieldName = "email";
+// const user = {
+//   name: "Ravi",
+//   [fieldName]: "ravi@gmail.com"
+// };
+
+
+
+
+
+
+
+
+
+
+ 
