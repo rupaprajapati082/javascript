@@ -70,3 +70,47 @@ console.dir(link)
 link.setAttribute("href", "www.google.com")
 let info = link.getAttribute("href");
 console.log("get Attribute",info) // -- give value
+//REMOVEATTRIBUTE
+
+// link.removeAttribute("href");
+
+
+// --------------------------------------------------------------------------
+// Dynamic DOM manipulation
+// createElement, appendChild, removeChild, prepend
+// createElement
+let text_h1 = document.createElement("h1");
+console.log(text_h1);
+text_h1.textContent = "create h1 with JS"
+
+// append / prepend
+// document.body.append(text_h1);
+document.body.prepend(text_h1);
+
+// appendChild
+let outer=document.createElement("div");
+outer.classList.add("outer");
+document.body.append(outer);
+
+let inner=document.createElement("div");
+inner.classList.add("inner");
+outer.appendChild(inner)
+
+// append vs appendchild
+// remove vs removechild
+// -----------------------------------------------------------------------------------------------------------
+// style updates via.style and classlist (add,remove ,toggle)
+console.dir(text_h1);
+text_h1.style.backgroundColor="blue";
+text_h1.style.text="white";
+text_h1.style.padding="10px";
+
+//classlist -add
+let card=document.querySelector(".card")
+console.dir(card)
+card.classList.add("card-style"); 
+
+// remove
+card.classList.remove("card")
+// togl
+card.classList.toggle("card")
