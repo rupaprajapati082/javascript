@@ -2448,3 +2448,43 @@ Number.isNaN(value);
 
 ---
 
+# JavaScript DOM (Document Object Model) – Complete Tasks (1–26)
+
+This README contains all JavaScript DOM tasks with explanations and examples.
+
+---
+
+## 1. What is the DOM? How does it represent the HTML structure?
+DOM (Document Object Model) ek programming interface hai jo HTML document ko **tree structure** me convert karta hai.  
+Is tree ke har part ko **node** kaha jata hai, jise JavaScript access aur modify kar sakta hai.
+
+---
+
+## 2. Types of nodes in the DOM tree
+- Document Node
+- Element Node
+- Text Node
+- Attribute Node
+- Comment Node
+
+---
+
+## 3. Difference between Element Node and Text Node
+
+| Element Node | Text Node |
+|-------------|----------|
+| HTML tags ko represent karta hai | Text ko represent karta hai |
+| Child nodes ho sakte hain | Child nodes nahi hote |
+| `<div>` | `Hello` |
+
+---
+
+## 4. Inspect the HTML and identify nodes
+
+```html
+<div>Hello<span>World</span></div>
+<div> → Element Node
+Hello → Text Node
+<span> → Element Node
+World → Text Node
+
