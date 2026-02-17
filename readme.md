@@ -2488,3 +2488,120 @@ Hello → Text Node
 <span> → Element Node
 World → Text Node
 
+5. Difference between getElementById and querySelector
+
+Answer:
+
+getElementById	querySelector
+Sirf ID se select karta hai	CSS selector use karta hai
+Faster	Flexible
+Single element	First matching element
+
+Example:
+
+document.getElementById("box");
+document.querySelector("#box");
+
+6. What does getElementsByClassName return? Is it an array?
+
+Answer:
+Ye HTMLCollection return karta hai.
+
+Why:
+HTMLCollection array jaisa hota hai but real array nahi hota.
+
+7. Select all buttons with class "buy-now"
+let buttons = document.querySelectorAll(".buy-now");
+
+8. T1: Change heading text using ID
+let heading = document.getElementById("heading");
+heading.textContent = "Welcome to JS DOM";
+
+9. T2: Print text of all <li> elements
+let list = document.querySelectorAll("li");
+
+list.forEach((val) => {
+  console.log(val.textContent);
+});
+
+10. Difference between innerText, textContent, innerHTML
+Property	Description
+innerText	Visible text only
+textContent	All text (hidden bhi)
+innerHTML	HTML + text
+11. When to use textContent instead of innerHTML?
+
+Answer:
+Jab sirf text change karna ho aur XSS attack se bachna ho.
+
+12. T3: Replace paragraph content with <b>Updated</b>
+let p = document.querySelector("p");
+p.innerHTML = "<b>Updated</b>";
+
+13. Get image src using JavaScript
+let img = document.querySelector("img");
+console.log(img.src);
+
+14. What does setAttribute() do?
+
+Answer:
+Element me attribute add ya update karta hai.
+
+img.setAttribute("src", "image.jpg");
+
+15. Add title attribute to a div dynamically
+let div = document.querySelector("div");
+div.setAttribute("title", "This is a div");
+
+16. Remove disabled attribute from a button
+let btn = document.querySelector("button");
+btn.removeAttribute("disabled");
+
+17. What does createElement() do? What is returned?
+
+Answer:
+Naya HTML element create karta hai aur element node return karta hai.
+
+let li = document.createElement("li");
+
+18. Difference between appendChild() and prepend()
+appendChild	prepend
+End me add	Start me add
+19. Can you remove an element using removeChild()?
+
+Answer:
+Yes.
+
+parent.removeChild(child);
+
+20. Add new list item at end of <ul>
+let li = document.createElement("li");
+li.textContent = "New Task";
+document.querySelector("ul").appendChild(li);
+
+21. Add image at top of a div
+let img = document.createElement("img");
+img.src = "https://via.placeholder.com/150";
+document.querySelector("div").prepend(img);
+
+22. Delete first item from list
+let firstItem = document.querySelector("ul li");
+firstItem.remove();
+
+23. Change background color of an element
+element.style.backgroundColor = "yellow";
+
+24. Difference between classList.add() and toggle()
+add()	toggle()
+Class add karta hai	Add/remove karta hai
+25. Add highlight class to even list items
+let li = document.querySelectorAll("ul li:nth-child(2n)");
+li.forEach((elem) => {
+  elem.classList.add("highlight");
+});
+
+26. Set font size of all <p> elements
+let p = document.querySelectorAll("p");
+p.forEach((el) => {
+  el.style.fontSize = "18px";
+});
